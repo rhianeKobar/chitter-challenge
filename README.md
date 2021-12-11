@@ -75,10 +75,14 @@ I want to receive an email if I am tagged in a Peep
 <h3 id="wireframes">Wireframes</h3>
 
 #### Mobile
+<div style="display:flex; gap:50px;">
 
 ![mobile home](resources/mobile-home.png)
 
 ![mobile profile](resources/mobile-profile.png)
+
+</div>
+
 
 
 #### Wider screens
