@@ -1,0 +1,6 @@
+@mixin center-page-items {
+	display: flex;
+	flex-direction: column;
+	row-gap: 20px;
+	margin: 0 auto;
+}
