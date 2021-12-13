@@ -6,8 +6,15 @@ group :test do
   gem 'rspec'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
+	gem 'capybara'
+	gem 'rubocop'
+	gem 'thin'
 end
 
-group :development, :test do
-  gem 'rubocop', '1.20'
+group :development do
+  gem 'sinatra'
+	gem 'sinatra-contrib'
+	gem 'pg'
+	gem 'dotenv'
+	gem 'bcrypt'
 end
