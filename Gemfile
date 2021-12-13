@@ -17,4 +17,5 @@ group :development do
 	gem 'pg'
 	gem 'dotenv'
 	gem 'bcrypt'
+	gem 'rack'
 end
