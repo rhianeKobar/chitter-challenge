@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '3.0.2'
+ruby '3.0.0'
 
 group :test do
   gem 'rspec'
@@ -12,10 +12,12 @@ group :test do
 end
 
 group :development do
-  gem 'sinatra'
-	gem 'sinatra-contrib'
-	gem 'pg'
 	gem 'dotenv'
 	gem 'bcrypt'
 	gem 'rack'
 end
+
+
+gem 'sinatra'
+gem 'sinatra-contrib'
+gem 'pg'
