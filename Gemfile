@@ -11,15 +11,10 @@ group :test do
 	gem 'thin'
 end
 
-group :development do
-	gem 'dotenv'
-	gem 'bcrypt'
-	gem 'rack'
-end
 
-group :production do
-  gem 'pg'
-end
-
+gem 'dotenv'
+gem 'bcrypt'
+gem 'rack'
+gem 'pg'
 gem 'sinatra'
 gem 'sinatra-contrib'
