@@ -18,3 +18,5 @@ class Chitter < Sinatra::Base
 
 	run! if app_file == $PROGRAM_NAME
 end
+
+#gem install pg -- --with-pg-config=/usr/lib/postgresql/13/bin/pg_config

@@ -17,7 +17,9 @@ group :development do
 	gem 'rack'
 end
 
+group :production do
+  gem 'pg'
+end
 
 gem 'sinatra'
 gem 'sinatra-contrib'
-gem 'pg'
