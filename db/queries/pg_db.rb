@@ -18,7 +18,7 @@ class PGDB
 		begin 
 			@db_session = PG.connect(dbname: db)
 		rescue
-			@db_session = PG.connect('localhost','5432','','',db,ENV['DBUSER'],ENV['DBPASSWORD'])
+			@db_session = PG.connect('localhost','5432','',db,ENV['DBUSER'],ENV['DBPASSWORD'])
 		rescue
 			@db_session = PG.connect :dbname => db, :user => ENV['DBUSER'], :password => 	ENV['DBPASSWORD']
 		rescue PG::ERROR => e
