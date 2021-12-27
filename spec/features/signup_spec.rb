@@ -3,7 +3,7 @@ require 'capybara/rspec'
 feature 'Sign up' do
 	scenario 'user signs up for an account' do
 		visit('/')
-		click_button('Sign up')
+		click_button(id:'signup')
 		fill_in('first_name', with: 'Shakira')
 		fill_in('last_name', with: 'Salazar')
 		fill_in('username', with: 'rhianekobar')

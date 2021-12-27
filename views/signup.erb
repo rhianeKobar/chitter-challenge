@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Chitter - Sign up</title>
+		<link rel="stylesheet" type="text/css" href="<%= url("/styles/landing/landing.css") %>">
+		<script src="https://kit.fontawesome.com/65db07c83e.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<section class="container">
+			<h1>Chitter</h1>
+			<h2>Sign up</h2>
+			<form action="/users/signup_newuser" method="POST" id="sign_up_form">
+
+				<label class="sr-only" for="first_name">First name</label>
+				<input type="text" name="first_name" class="form_input" placeholder="first name"/>
+
+				<label class="sr-only" for="last_name">Last name</label>
+				<input type="text" name="last_name" class="form_input" placeholder="last name"/>
+
+				<label class="sr-only" for="username">Username</label>
+				<input type="text" name="username" class="form_input" placeholder="username"/>
+
+				<label class="sr-only" for="email">Email address</label>
+				<input type="text" name="email" class="form_input" placeholder="email address"/>
+
+				<label class="sr-only" for="passsword">Password</label>
+				<input type="text" name="password" class="form_input" placeholder="password"/>
+
+				<input type="submit" name="submit" value="Sign up" class="form_btn">
+
+			</form>
+		</section>
+	</body>
+</html>

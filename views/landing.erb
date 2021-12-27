@@ -3,25 +3,24 @@
 <head>
 	<title>Chitter</title>
 	<link rel="stylesheet" type="text/css" href="<%= url("/styles/landing/landing.css") %>">
+	<script src="https://kit.fontawesome.com/65db07c83e.js" crossorigin="anonymous"></script>
 </head>
 <body>
 	<section class="container">
-		<h1>Chitter</h1>
+		<h1>Chitter <i class="far fa-comment-dots"></i></h1>
 		<% if @user.nil? %>
-      <form action="/user/login" method="get">
-				<label class="sr-only" for="login">Login</label>
-        <input type="submit" value ="Login" name="login"/>
-      </form>
-			<form action="/user/signup" method="get">
-				<label class="sr-only" for="signup">Sign up</label>
-        <input type="submit" value ="Sign up" name="signup"/>
-      </form>
-		<% end %>
-
-		<% if @user %>
+			<form action="/users/login" method="get">
+				<label class="sr-only" for="login"> Login</label>
+				<input type="submit" value ="Login" name="logout" class="form_input"/>
+			</form>
+			<form action="/users/signup" method="get">
+				<label class="sr-only" for="signup">signup</label>
+				<input type="submit" value ="Sign up" name="signup" class="form_input" id="signup"/>
+			</form>
+		<% else %>
 		<form action="/logout" >
 			<label class="sr-only" for="logout"> Logout</label>
-			<input type="submit" value ="Logout" name="logout"/>
+			<input type="submit" value ="Logout" name="logout" class="form_input"/>
 		</form>
 		<% end %>
 	</section>

@@ -16,6 +16,24 @@ class Chitter < Sinatra::Base
 		erb :landing
 	end
 
+	get '/users/login' do
+		erb :login
+	end
+
+	get '/users/signup' do
+		erb :signup
+	end
+
+	post '/users/signup_newuser' do
+		first_name = params[:first_name]
+		last_name = params[:last_name]
+		username = params[:username]
+		email = params[:email]
+		password = params[:password]
+		Users.add_new(first_name: first_name,last_name: last_name,username: username,email: email, password: password)
+		redirect '/users/login'
+	end
+
 	run! if app_file == $PROGRAM_NAME
 end
 
