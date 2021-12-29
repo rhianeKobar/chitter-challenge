@@ -34,6 +34,9 @@ class Chitter < Sinatra::Base
 		redirect '/users/login'
 	end
 
+	post '/users/login_successful' do
+		
+
 	run! if app_file == $PROGRAM_NAME
 end
 

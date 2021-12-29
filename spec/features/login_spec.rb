@@ -6,6 +6,6 @@ feature 'Login' do
 		fill_in('username', with: 'rhianekobar')
 		fill_in('password', with: 'password')
 		click_button('Login')
-		expect(page).to have_content 'Hey Shakira!'
+		expect(page).to have_content 'Login Successful'
 	end
 end
