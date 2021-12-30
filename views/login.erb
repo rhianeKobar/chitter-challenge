@@ -7,15 +7,15 @@
 	</head>
 	<body>
 		<section class="container">
-			<h1>Chitter</h1>
+			<h1>Chitter <i class="far fa-comment-dots"></i></h1>
 			<h2>Login</h2>
-			<form action="/users/login_successful" method="POST">
+			<form action="/users/login" method="POST">
 
 				<label class="sr-only" for="username">Username</label>
 				<input type="text" name="username" class="form_input" placeholder="username"/>
 
 				<label class="sr-only" for="passsword">Password</label>
-				<input type="text" name="password" class="form_input" placeholder="password"/>
+				<input type="password" name="password" class="form_input" placeholder="password"/>
 
 				<input type="submit" name="submit" value="Login" class="form_btn">
 

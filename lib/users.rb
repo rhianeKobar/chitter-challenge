@@ -13,11 +13,22 @@ class Users < PGDB
 		Users.new(id: result['id'], first_name: result['first_name'], last_name: result['last_name'], username: result['username'], email: result['email'], password: result['password'])
 	end
 
-	def self.select_user(id:)
-		return nil unless id
+	def self.select_user(username:)
+		return nil unless username
 		select_db
-		result = @db_session.query("SELECT * FROM users WHERE id = #{id};")
+		result = @db_session.query("SELECT * FROM users WHERE username = '#{username}';")
 		Users.new(id: result[0]['id'], first_name: result[0]['first_name'], last_name: result[0]['last_name'], username: result[0]['username'], email: result[0]['email'], password: result[0]['password'])
+	end
+
+	def self.auth(username:, password:)
+		user = select_user(username: username)
+		user_pwd = BCrypt::Password.new(user.password)
+		input_pwd = ENV['PADDING'] + password
+		if user_pwd == input_pwd 
+			Users.new(id:user.id, first_name:user.first_name, last_name: user.last_name, username: user.username, email: user.email, password: user.password)
+		else
+			return
+		end
 	end
 
 	private_class_method
@@ -25,7 +36,6 @@ class Users < PGDB
 	attr_accessor :id, :first_name, :last_name, :username, :email, :password
 
 	def initialize(id:, first_name:, last_name:, username:, email:, password:)
-		@id = id
 		@first_name = first_name
 		@last_name = last_name 
 		@username = username

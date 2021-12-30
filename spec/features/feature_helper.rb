@@ -10,3 +10,9 @@ def signup
 	fill_in('password', with: 'password')
 	click_button('Sign up')
 end
+
+def login
+	fill_in('username', with: 'rhianekobar')
+	fill_in('password', with: 'password')
+	click_button('Login')
+end
