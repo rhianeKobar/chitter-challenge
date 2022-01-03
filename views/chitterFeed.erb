@@ -1,1 +1,47 @@
-View all peeps
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Chitter - Home</title>
+	<link rel="stylesheet" type="text/css" href="<%= url("/styles/feed/feed.css") %>">
+	<script src="https://kit.fontawesome.com/65db07c83e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<section class="feed-grid">
+		<section class="side-grid">
+			<h2 class="side-grid-header">Chitter <i class="far fa-comment-dots"></i></h2>
+			<section class="user-info">
+				<h3><%= @first_name%></h3>
+				<h4>@<%= @username%></h4>
+			</section>
+		</section>
+		<section class="peeps-grid">
+			<section class="make-peep">
+				<div></div>
+				<form action="/peeps/create" method="post" id="create_peep">
+					<div>
+						<label class="sr-only" for="message">peep message</label>
+						<input type="text" name="message" class="peep_input peep_message" placeholder="What's up?"/>
+					</div>
+					<div>
+						<input type="submit" name="submit" value="Make a peep!" class="peep_input btn">
+					</div>
+				</form>
+				<div></div>
+			</section>
+			<section class="all-peeps">
+				<% @peeps.each do |peep| %>
+					<section>
+						<%= peep.message%>
+					</section>
+				<%end%>
+			</section>
+		</section>
+		<section class="user-buttons">
+			<form action="/" method="post">
+				<label class="sr-only" for="signout"> Login</label>
+				<input type="submit" value ="Sign out" name="signout" class="btn"/>
+			</form>
+		</section>
+	</section>
+</body>
+</html>

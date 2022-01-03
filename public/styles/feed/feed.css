@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@700&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Jura', sans-serif;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background-color: #786BAF;
+}
+
+h1 {
+  font-family: 'Lobster Two', cursive, sans-serif;
+  font-size: 3em;
+  letter-spacing: 0.06em;
+}
+
+.btn {
+  background: rgba(255, 255, 255, 0.95);
+  border: 0.5px solid black;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+.feed-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr 1fr;
+      grid-template-columns: 1fr 3fr 1fr;
+  height: 100%;
+}
+
+.side-grid {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+h2 {
+  font-family: 'Lobster Two', cursive, sans-serif;
+  font-size: 2.5em;
+  letter-spacing: 0.06em;
+}
+
+h3 {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.side-grid-header {
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+}
+
+.user-info {
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
+.peeps-grid {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  width: 100%;
+}
+
+.make-peep {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 5fr 1fr;
+      grid-template-columns: 1fr 5fr 1fr;
+}
+
+#create_peep {
+  border: 0.2px solid #000000;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 10px;
+  width: 100%;
+  height: 5em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 2fr 1fr;
+      grid-template-rows: 2fr 1fr;
+  padding: 0.2em;
+}
+
+.peep_message {
+  border: none;
+  background-color: transparent;
+  text-align: left;
+}
+
+.user-buttons {
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+/*# sourceMappingURL=feed.css.map */

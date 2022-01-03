@@ -6,3 +6,14 @@
 	row-gap: 20px;
 	margin: 0 auto;
 }
+
+@mixin feed-grid {
+	display: grid;
+	grid-template-columns: 1fr 3fr 1fr;
+	height: 100%;
+}
+
+@mixin side-grid {
+	display: grid;
+	justify-content: center;
+}

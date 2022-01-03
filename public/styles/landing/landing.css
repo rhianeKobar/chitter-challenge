@@ -1,10 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Jura:wght@700&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-h1 {
-  font-family: 'Lobster Two', cursive, sans-serif;
-  font-size: 3em;
-  letter-spacing: 0.06em;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -29,6 +23,21 @@ body {
   width: 100%;
   position: relative;
   background-color: #786BAF;
+}
+
+h1 {
+  font-family: 'Lobster Two', cursive, sans-serif;
+  font-size: 3em;
+  letter-spacing: 0.06em;
+}
+
+.btn {
+  background: rgba(255, 255, 255, 0.95);
+  border: 0.5px solid black;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+  padding: 2px;
 }
 
 form {

@@ -40,7 +40,7 @@ class Chitter < Sinatra::Base
 		username = params[:username]
 		email = params[:email]
 		password = params[:password]
-		Users.add_new(first_name: first_name, last_name: last_name,username: username,email: email, password: password)
+		Users.add_new(first_name: first_name, last_name: last_name, username: username, email: email, password: password)
 		redirect '/users/login'
 	end
 
@@ -51,7 +51,18 @@ class Chitter < Sinatra::Base
 	# end
 
 	get '/chitter/feed' do
+		current_user =  Users.select_id(id: session[:id])
+		@first_name = current_user.first_name
+		@username = current_user.username
+		@peeps = Peep.all
 		erb :chitterFeed
+	end
+
+	post '/peeps/create' do
+		message = params[:message]
+		user_id = session[:id]
+		Peep.create_peep(message: message, user_id: user_id)
+		redirect '/chitter/feed'
 	end
 
 

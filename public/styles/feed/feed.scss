@@ -1,0 +1,54 @@
+@import './../_variables.scss';
+@import './../_mixins.scss';
+
+.feed-grid{
+	@include feed-grid
+}
+
+.side-grid{
+	@include side-grid
+}
+
+h2{
+	font-family: 'Lobster Two', cursive, sans-serif;
+	font-size: 2.5em;
+	letter-spacing: 0.06em;
+}
+h3{
+	color: $white;
+}
+.side-grid-header{
+	align-self: start;
+}
+.user-info{
+	align-self: end;
+	// justify-self: center;
+}
+.peeps-grid{
+	justify-self: center;
+	width: 100%;
+}
+.make-peep{
+	display: grid;
+	grid-template-columns: 1fr 5fr 1fr;
+}
+#create_peep{
+	border: 0.2px solid #000000;
+	box-sizing: border-box;
+	border-radius: 10px;
+	width: 100%;
+	height: 5em;
+	display: grid;
+	grid-template-rows: 2fr 1fr;
+	padding: 0.2em;
+}
+.peep_input{
+}
+.peep_message{
+	border: none;
+	background-color: transparent;
+	text-align: left;
+}
+.user-buttons{
+	justify-self: end;
+}

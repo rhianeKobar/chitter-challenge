@@ -5,8 +5,45 @@ $gray: #b2b2b2;
 
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@700&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing:border-box;
+	font-family: 'Jura', sans-serif;
+}
+
+.sr-only {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+body {
+	height:100vh;
+	width:100%;
+	position: relative;
+	background-color: $purple;
+}
+
 h1{
 	font-family: 'Lobster Two', cursive, sans-serif;
 	font-size: 3em;
 	letter-spacing: 0.06em;
+}
+
+.btn{
+	background: $white;
+	border: 0.5px solid $black;
+	box-sizing: border-box;
+	border-radius: 5px;
+	padding: 2px;
+}
+
+.peep_message{
+	
 }
