@@ -3,8 +3,8 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require_relative './db/queries/pg_db.rb'
-require_relative './lib/users'
-require_relative './lib/peeps'
+require_relative './lib/user'
+require_relative './lib/peep'
 
 class Chitter < Sinatra::Base
 
@@ -21,7 +21,7 @@ class Chitter < Sinatra::Base
 	end
 
 	post '/users/login' do
-		current_user = Users.auth(username: params[:username], password: params[:password])
+		current_user = User.auth(username: params[:username], password: params[:password])
 		if current_user
 			session[:id] = current_user.id
 			redirect 'chitter/feed'
@@ -40,8 +40,13 @@ class Chitter < Sinatra::Base
 		username = params[:username]
 		email = params[:email]
 		password = params[:password]
-		Users.add_new(first_name: first_name, last_name: last_name, username: username, email: email, password: password)
+		User.add_new(first_name: first_name, last_name: last_name, username: username, email: email, password: password)
 		redirect '/users/login'
+	end
+
+	post '/users/signout' do
+		session.delete(:id)
+		redirect 'chitter/feed'
 	end
 
 	# I want to add a delay before continuing. will work this out later
@@ -51,9 +56,15 @@ class Chitter < Sinatra::Base
 	# end
 
 	get '/chitter/feed' do
-		current_user =  Users.select_id(id: session[:id])
-		@first_name = current_user.first_name
-		@username = current_user.username
+		if session[:id]
+			current_user =  User.select_id(id: session[:id])
+			@first_name = current_user.first_name
+			@username = current_user.username
+		else
+			@first_name = "Guest"
+			@username = "Guest"
+		end
+		
 		@peeps = Peep.all
 		erb :chitterFeed
 	end

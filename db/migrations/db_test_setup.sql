@@ -11,7 +11,7 @@ CREATE TABLE users (
 
 CREATE TABLE peeps (
 	id SERIAL PRIMARY KEY,	
-	date TIMESTAMP, 
+	date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,  
 	message TEXT, 
 	user_id INT, 
 	CONSTRAINT fk_user FOREIGN KEY(user_id) REFERENCES users(id)

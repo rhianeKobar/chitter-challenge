@@ -46,6 +46,8 @@ h1 {
   -ms-grid-columns: 1fr 3fr 1fr;
       grid-template-columns: 1fr 3fr 1fr;
   height: 100%;
+  padding-top: 1em;
+  padding-right: 1em;
 }
 
 .side-grid {
@@ -87,12 +89,13 @@ h3 {
 .make-peep {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 5fr 1fr;
-      grid-template-columns: 1fr 5fr 1fr;
+  -ms-grid-columns: 1fr 3fr 1fr;
+      grid-template-columns: 1fr 3fr 1fr;
+  border-bottom: 0.3em solid black;
 }
 
 #create_peep {
-  border: 0.2px solid #000000;
+  border: 0.2px solid transparent;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 10px;
@@ -103,12 +106,65 @@ h3 {
   -ms-grid-rows: 2fr 1fr;
       grid-template-rows: 2fr 1fr;
   padding: 0.2em;
+  margin: 0.5em;
+}
+
+.peep_input {
+  font-size: 1.2em;
 }
 
 .peep_message {
   border: none;
   background-color: transparent;
   text-align: left;
+}
+
+.all-peeps {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+}
+
+.peep-grid {
+  width: 80%;
+  height: 120px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr 1fr;
+      grid-template-columns: 1fr 3fr 1fr;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin-top: 1em;
+  padding-bottom: 0.5em;
+  border-bottom: 0.1em solid black;
+}
+
+.peep-info {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 2fr 1fr;
+      grid-template-rows: 1fr 2fr 1fr;
+}
+
+#peep-message {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+#peep-date {
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
+b {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.2em;
 }
 
 .user-buttons {

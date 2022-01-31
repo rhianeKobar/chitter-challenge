@@ -2,7 +2,10 @@
 @import './../_mixins.scss';
 
 .feed-grid{
-	@include feed-grid
+	@include feed-grid;
+	height: 100%;
+	padding-top: 1em;
+	padding-right: 1em;
 }
 
 .side-grid{
@@ -29,11 +32,11 @@ h3{
 	width: 100%;
 }
 .make-peep{
-	display: grid;
-	grid-template-columns: 1fr 5fr 1fr;
+	@include feed-grid;
+	border-bottom: 0.3em solid $black;
 }
 #create_peep{
-	border: 0.2px solid #000000;
+	border: 0.2px solid transparent;
 	box-sizing: border-box;
 	border-radius: 10px;
 	width: 100%;
@@ -41,13 +44,45 @@ h3{
 	display: grid;
 	grid-template-rows: 2fr 1fr;
 	padding: 0.2em;
+	margin: 0.5em;
+
 }
 .peep_input{
+	font-size: 1.2em;
 }
 .peep_message{
 	border: none;
 	background-color: transparent;
 	text-align: left;
+}
+.all-peeps{
+	justify-self: center;
+	width:100%;
+	display: grid;
+}
+.peep-grid{
+	width:80%;
+	height: 120px;
+	@include feed-grid;
+	justify-self: center;
+	margin-top: 1em;
+	padding-bottom: 0.5em;
+	border-bottom: 0.1em solid $black;
+}
+.peep-info{
+	display: grid;
+	grid-template-rows: 1fr 2fr 1fr;
+}
+#peep-message{
+	justify-self: center;
+	align-self: center;
+}
+#peep-date{
+	align-self: end;
+}
+b{
+	color: $white;
+	font-size: 1.2em;
 }
 .user-buttons{
 	justify-self: end;

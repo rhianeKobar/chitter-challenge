@@ -16,31 +16,52 @@
 		</section>
 		<section class="peeps-grid">
 			<section class="make-peep">
-				<div></div>
-				<form action="/peeps/create" method="post" id="create_peep">
-					<div>
-						<label class="sr-only" for="message">peep message</label>
-						<input type="text" name="message" class="peep_input peep_message" placeholder="What's up?"/>
-					</div>
-					<div>
-						<input type="submit" name="submit" value="Make a peep!" class="peep_input btn">
-					</div>
-				</form>
-				<div></div>
+				<% if @username == "Guest" %>
+					<div></div>
+					<div id="create_peep"> Please Log in to post a peep</div>
+					<div></div>
+				<% else %>
+					<div></div>
+					<form action="/peeps/create" method="post" id="create_peep">
+						<div>
+							<label class="sr-only" for="message">peep message</label>
+							<input type="text" name="message" class="peep_input peep_message" placeholder="What's up?"/>
+						</div>
+						<div>
+							<input type="submit" name="submit" value="Make a peep!" class="btn">
+						</div>
+					</form>
+					<div></div>
+				<%end%>
 			</section>
 			<section class="all-peeps">
 				<% @peeps.each do |peep| %>
-					<section>
-						<%= peep.message%>
+				<% peep_poster = User.select_id(id:peep.user_id)%>
+					<section class="peep-grid">
+						<img />
+						<section class="peep-info">
+							<div>
+								<p><b><%=peep_poster.first_name%></b> @<%=peep_poster.username%></p>
+							</div>
+							<p id="peep-message"><%= peep.message%></p>
+							<p id="peep-date"><%= peep.date%></p>
+						</section>
 					</section>
 				<%end%>
 			</section>
 		</section>
 		<section class="user-buttons">
-			<form action="/" method="post">
-				<label class="sr-only" for="signout"> Login</label>
-				<input type="submit" value ="Sign out" name="signout" class="btn"/>
-			</form>
+			<% if @username == "Guest" %>
+				<form action="/users/login" method="get">
+					<label class="sr-only" for="login"> Login</label>
+					<input type="submit" value ="Login" name="login" class="btn"/>
+				</form>
+			<%else%>
+				<form action="/users/signout" method="post">
+					<label class="sr-only" for="signout"> Login</label>
+					<input type="submit" value ="Sign out" name="signout" class="btn"/>
+				</form>
+			<%end%>		
 		</section>
 	</section>
 </body>

@@ -14,9 +14,9 @@ class Peep < PGDB
 
 	def self.all
 		select_db
-		results = @db_session.query("SELECT * FROM peeps ORDER BY id DESC;")
+		results = @db_session.query("SELECT id, to_char(date, 'mon DD YYYY HH24:MI') peep_date, message, user_id FROM peeps ORDER BY id DESC;")
 		results.map { |row| 
-			Peep.new(id: row['id'], date: row['date'], message: row['message'], user_id: row['user_id'])
+			Peep.new(id: row['id'], date: row['peep_date'], message: row['message'], user_id: row['user_id'])
 		}
 	end
 
