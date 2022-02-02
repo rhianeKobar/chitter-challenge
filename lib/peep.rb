@@ -1,11 +1,8 @@
-require 'dotenv'
 require 'pg'
 require_relative './../db/queries/pg_db'
 
 class Peep < PGDB
-
-	Dotenv.load
-
+	
 	def self.create_peep(message:, user_id:)
 		select_db
 		result = @db_session.exec_params("INSERT INTO peeps (message, user_id) 	VALUES ($1,$2) RETURNING *;",[message, user_id]).first

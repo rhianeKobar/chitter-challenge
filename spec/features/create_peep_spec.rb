@@ -7,7 +7,7 @@ feature 'create a peep' do
 		within('#create_peep') do 
 			fill_in 'message', with: 'This is my first peep!'
 		end
-		click_button('Make a peep!')
+		click_button('Peep it!')
 		expect(page).to have_content 'This is my first peep!'
 	end
 end

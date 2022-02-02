@@ -18,11 +18,16 @@
   width: 1px;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   height: 100vh;
   width: 100%;
   position: relative;
   background-color: #786BAF;
+  overflow: hidden;
 }
 
 h1 {
@@ -45,9 +50,8 @@ h1 {
   display: grid;
   -ms-grid-columns: 1fr 3fr 1fr;
       grid-template-columns: 1fr 3fr 1fr;
-  height: 100%;
-  padding-top: 1em;
-  padding-right: 1em;
+  height: 100vh;
+  padding: 1em;
 }
 
 .side-grid {
@@ -56,6 +60,7 @@ h1 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  min-height: 0;
 }
 
 h2 {
@@ -84,6 +89,7 @@ h3 {
   -ms-grid-column-align: center;
       justify-self: center;
   width: 100%;
+  min-height: 0;
 }
 
 .make-peep {
@@ -122,18 +128,20 @@ h3 {
 .all-peeps {
   -ms-grid-column-align: center;
       justify-self: center;
-  width: 100%;
   display: -ms-grid;
   display: grid;
+  overflow: auto;
+  height: 100%;
+  margin-right: -2000px;
+  padding-right: 2000px;
 }
 
 .peep-grid {
-  width: 80%;
-  height: 120px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 3fr 1fr;
       grid-template-columns: 1fr 3fr 1fr;
+  width: 80%;
   -ms-grid-column-align: center;
       justify-self: center;
   margin-top: 1em;
@@ -160,6 +168,7 @@ h3 {
   -ms-flex-item-align: end;
       -ms-grid-row-align: end;
       align-self: end;
+  font-size: 0.8em;
 }
 
 b {
@@ -170,5 +179,6 @@ b {
 .user-buttons {
   -ms-grid-column-align: end;
       justify-self: end;
+  min-height: 0;
 }
 /*# sourceMappingURL=feed.css.map */

@@ -3,13 +3,13 @@
 
 .feed-grid{
 	@include feed-grid;
-	height: 100%;
-	padding-top: 1em;
-	padding-right: 1em;
+	height: 100vh;
+	padding: 1em;
 }
 
 .side-grid{
-	@include side-grid
+	@include side-grid;
+	min-height: 0;
 }
 
 h2{
@@ -30,6 +30,7 @@ h3{
 .peeps-grid{
 	justify-self: center;
 	width: 100%;
+	min-height: 0;
 }
 .make-peep{
 	@include feed-grid;
@@ -57,13 +58,15 @@ h3{
 }
 .all-peeps{
 	justify-self: center;
-	width:100%;
 	display: grid;
+	overflow:auto;    
+	height: 100%;
+	margin-right: -2000px;
+	padding-right: 2000px;
 }
 .peep-grid{
-	width:80%;
-	height: 120px;
 	@include feed-grid;
+	width: 80%;
 	justify-self: center;
 	margin-top: 1em;
 	padding-bottom: 0.5em;
@@ -79,6 +82,7 @@ h3{
 }
 #peep-date{
 	align-self: end;
+	font-size: 0.8em;
 }
 b{
 	color: $white;
@@ -86,4 +90,5 @@ b{
 }
 .user-buttons{
 	justify-self: end;
+	min-height: 0;
 }

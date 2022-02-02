@@ -18,11 +18,16 @@
   width: 1px;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   height: 100vh;
   width: 100%;
   position: relative;
   background-color: #786BAF;
+  overflow: hidden;
 }
 
 h1 {

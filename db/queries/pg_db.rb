@@ -27,7 +27,7 @@ class PGDB
 	end
 
 	def self.truncate_tables
-    @db_session.exec("TRUNCATE users, peeps;")
+    @db_session.exec("TRUNCATE users, peeps, comments;")
   end
 
 end
