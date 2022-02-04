@@ -1,5 +1,17 @@
 require 'capybara/rspec'
 
+def signup_and_login
+	signup
+	login
+end
+
+def create_peep
+	within('#create_peep') do 
+			fill_in 'message', with: 'This is my first peep!'
+		end
+	click_button('Peep it!')
+end
+
 def signup
 	visit('/')
 	click_button(id:'signup')

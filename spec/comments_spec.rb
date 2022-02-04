@@ -11,4 +11,25 @@ describe 'Comments' do
 	it 'should have a user id' do
 		expect(comment.user_id).to eq user.id
 	end
+	
+	it 'should have a peep id' do
+		expect(comment.peep_id).to eq peep.id
+	end
+
+	it 'should have a date, message and ID' do
+		expect(comment.id).not_to be_nil
+		expect(comment.date).not_to be_nil
+		expect(comment.message).not_to be_nil
+	end
+
+	describe 'find comment' do
+
+		it 'should return comments' do
+			results = Comment.find_comments(peep_id: peep.id)
+			expect(results[0].message).to eq "This is my first comment on a peep"
+		end
+	
+	end
+
+	
 end

@@ -37,7 +37,7 @@
 			<section class="all-peeps">
 				<% @peeps.each do |peep| %>
 				<% peep_poster = User.select_id(id:peep.user_id)%>
-					<section class="peep-grid">
+					<section class="peep-grid" id=<%= peep.id%> >
 						<img />
 						<section class="peep-info">
 							<div>
@@ -45,6 +45,18 @@
 							</div>
 							<p id="peep-message"><%= peep.message%></p>
 							<p id="peep-date"><%= peep.date%></p>
+							<%comments = Comment.find_comments(peep_id: peep.id)%>
+							<% comments.each do |comment|%>
+								<p><%= comment.message%> <%= comment.date%></p>
+							<%end%>
+							<% if @username != "Guest" %>
+								<form action="/comments/create" method="post">
+									<input type="text" name="comment" class="input_comments" placeholder="Got a peep to make?"/>
+									<input type="text" name="user" class="input_hidden" value=<%= peep.user_id%> />
+									<input type="text" name="peep" class="input_hidden" value=<%= peep.id%> />
+									<input type="submit" name="submit" value="peep back!" class="btn">
+								</form>
+							<%end%>
 						</section>
 					</section>
 				<%end%>

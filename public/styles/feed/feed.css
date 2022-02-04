@@ -181,4 +181,14 @@ b {
       justify-self: end;
   min-height: 0;
 }
+
+.input_comments {
+  background-color: transparent;
+  border: 0.3px solid black;
+  border-radius: 5px;
+}
+
+.input_hidden {
+  display: none;
+}
 /*# sourceMappingURL=feed.css.map */

@@ -1,5 +1,6 @@
 require 'pg'
 require 'dotenv'
+require 'time'
 
 class PGDB
 
@@ -24,6 +25,13 @@ class PGDB
 		rescue PG::ERROR => e
 			puts e.message
 		end
+	end
+
+	def self.parse_datetime(date)
+		if date 
+      ruby_date = Time.parse(date)
+      ruby_date.strftime("%d-%m-%y %H:%M")
+    end
 	end
 
 	def self.truncate_tables

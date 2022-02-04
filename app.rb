@@ -5,6 +5,7 @@ require 'sinatra/reloader'
 require_relative './db/queries/pg_db.rb'
 require_relative './lib/user'
 require_relative './lib/peep'
+require_relative './lib/comment'
 
 class Chitter < Sinatra::Base
 
@@ -76,6 +77,15 @@ class Chitter < Sinatra::Base
 		redirect '/chitter/feed'
 	end
 
+	post '/comments/create' do
+	
+		message = params[:comment]
+		user_id = params[:user]
+		peep_id = params[:peep]
+		Comment.add_comment(message: message, user_id: user_id, peep_id: peep_id)
+		redirect '/chitter/feed'
+	
+	end
 
 	run! if app_file == $PROGRAM_NAME
 end
